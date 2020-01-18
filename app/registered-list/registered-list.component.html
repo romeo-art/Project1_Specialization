@@ -1,0 +1,18 @@
+<div class="registeredList">
+    <h2>Registered List</h2>
+    <table>
+        <tr>
+            <th>Registered Person</th>
+            <th>Edit</th>
+        </tr>
+        <tr *ngFor="let each of toSubmitData">
+            <td>Name: {{each.name}} Age: {{each.age}} Address: {{each.address}} Gender:
+                    {{each.gender}}</td>
+            <td><button (click)="edit()">Edit</button></td>
+        </tr>
+    </table>
+        <!-- <p *ngFor="let each of toSubmitData">Name: {{each.name}} Age: {{each.age}} Address: {{each.address}} Gender:
+            {{each.gender}}
+            <button (click)="edit()">Edit</button>
+        </p> -->
+</div>

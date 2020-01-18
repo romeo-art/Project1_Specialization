@@ -1,0 +1,17 @@
+<div>
+    <h2>Registration</h2>
+    <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+        <label for="name">Name: </label>
+        <input type="text" placeholder="Enter your name" formControlName="yourname" value={{editname}}><br><br>
+        <label for="age">Age: </label>
+        <input type="text" placeholder="Enter your age" formControlName="age" ><br><br>
+        <label for="address">Address: </label>
+        <input type="text" placeholder="Enter your address" formControlName="address" ><br><br>
+        <select name="gender" id="gender" formControlName="gender" >
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <button [disabled]="!reactiveForm.valid">Submit</button>
+        <app-registered-list (editName)="editname=&event" (editAddress)="editaddress=$event" [toSubmitData]="submitData"></app-registered-list>
+    </form>
+</div>
